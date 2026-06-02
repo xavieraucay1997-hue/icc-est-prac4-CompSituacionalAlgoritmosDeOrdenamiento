@@ -4,6 +4,7 @@ import models.Persona;
 
 public class SortPersonaMethods {
 
+
     public void insertionSort(Persona[] personas) {
         for (int i = 1; i < personas.length; i++) {
             Persona key = personas[i];
@@ -19,15 +20,22 @@ public class SortPersonaMethods {
     public void quickSort(Persona[] personas, int inicio, int fin) {
         if (inicio < fin) {
             int indicePivote = particionar(personas, inicio, fin);
-            quickSort(personas, inicio, indicePivote - 1);
-            quickSort(personas, indicePivote + 1, fin);
+
+            if (indicePivote > inicio) {
+                quickSort(personas, inicio, indicePivote - 1);
+            }
+            if (indicePivote < fin) {
+                quickSort(personas, indicePivote + 1, fin);
+            }
         }
     }
 
     private int particionar(Persona[] personas, int inicio, int fin) {
+        int medio = inicio + (fin - inicio) / 2;
+        intercambiar(personas, medio, fin); 
         Persona pivote = personas[fin];
-        int i = inicio - 1;
 
+        int i = inicio - 1;
         for (int j = inicio; j < fin; j++) {
             if (personas[j].getCriterioOrdenamiento() <= pivote.getCriterioOrdenamiento()) {
                 i++;
@@ -45,6 +53,7 @@ public class SortPersonaMethods {
         personas[j] = aux;
     }
 }
+
 
 
 
