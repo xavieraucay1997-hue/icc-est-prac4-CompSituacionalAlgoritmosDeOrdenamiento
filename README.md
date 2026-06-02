@@ -1,7 +1,11 @@
 Practica N4 
+
 Asginatura Estructura de datos
-Nombre : Xavier Aucay 
+
+Nombre : Xavier Aucay
+
 Fecha de entrega : 2/6/2026
+
 
 ![alt text](image.png)
 
