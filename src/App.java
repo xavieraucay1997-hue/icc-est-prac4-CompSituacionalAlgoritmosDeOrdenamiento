@@ -31,7 +31,6 @@ public class App {
             System.out.println(r1);
             System.out.println(r2);
 
-            // Escenario 2: Casi ordenado + 1 persona
             Persona[] base2 = generarPersonas(size);
             metodos.quickSort(base2, 0, base2.length - 1);
 
